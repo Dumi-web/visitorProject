@@ -11,12 +11,10 @@ public class visitorTest {
         assertEquals("visitor_alice cooper.txt File already exists!",alice.save());
         assertEquals("results in visitor_alice_cooper.txt",alice.save());
         assertEquals("results in visitor_alicecooper.txt",alice.save());
-
     }
     @Test
     void load(){
-       assertEquals("Name: alice cooper Age: 30 Date: 08 September 2012 Time: 14:45 Comments: I really enjoyed this place Aid: Clive",alice.load("Alice Cooper"));
-       assertEquals("Name: " + "alice" + " Age: " + "30"  + " Date: " + "08 Sepetmber 2012"  + " Time: " + "14:45" + " Comments: " + "I really enjoyed this place " + " Aid: " + "Clive",alice.load("Alice Cooper"));
-
+       assertEquals("Name: alice cooper Age: 30 Date: 08 September 2012 Time: 14:45 Comments: I really enjoyed this place  Aid: Clive",alice.load("Alice Cooper"));
+       assertEquals("Name: " + "alice" + " Age: " + "30"  + " Date: " + "08 September 2012"  + " Time: " + "14:45" + " Comments: " + "I really enjoyed this place " + " Aid: " + "Clive",alice.load("Alice Cooper"));
     }
 }
