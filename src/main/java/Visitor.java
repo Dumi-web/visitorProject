@@ -6,14 +6,14 @@ import java.util.Scanner;
     public class Visitor  {
       static String Name;
       static int n;
-      static LocalDate date = LocalDate.now();
-      static LocalTime time = LocalTime.now();
+      String time;
+      String date;
       static String feedback;
       static String aid;
       static String fileName;
 
 
-     Visitor(String visitorName,int age,LocalDate dateOfVisit, LocalTime checkIn, String comment, String assistanceName){
+     Visitor(String visitorName,int age,String dateOfVisit, String checkIn, String comment, String assistanceName){
         Name = visitorName;
         n  = age;
         date = dateOfVisit;
@@ -28,7 +28,7 @@ import java.util.Scanner;
             File myNewFile = new File(fileName);
                 if(myNewFile.createNewFile()){
                     FileWriter myFile = new FileWriter(myNewFile);
-                    myFile.write("Name: " + Name + "\n"+ "Age: " + n + "\n" + "Date: " + date + "\n" + "Time: " + time + "\n" + "Comments: " + feedback + "\n" + "Aid: " + aid);
+                    myFile.write("Name: " + Name + " Age: " + n  + " Date: " + date  + " Time: " + time + " Comments: " + feedback + " Aid: " + aid);
                     myFile.close();
                     outcome += "results in "+fileName;
                 }else{
@@ -43,21 +43,21 @@ import java.util.Scanner;
             return outcome;
     }
     public String load(String visitorName){
-         String output = "";
+         StringBuilder output = new StringBuilder();
          String fileName = "visitor_"+visitorName.split(" ")[0]+"_"+visitorName.split(" ")[1]+".txt";
          try{
              File myObj = new File(fileName);
              Scanner myReader = new Scanner(myObj);
              while(myReader.hasNextLine()){
                  String data = myReader.nextLine();
-                 output += data+"\n ";
+                 output.append(data);
              }
              myReader.close();
          } catch (FileNotFoundException e) {
-             output = "An error has occurred";
+             output = new StringBuilder("An error has occurred");
              e.printStackTrace();
          }
-         return output;
+         return output.toString();
     }
 
 }
