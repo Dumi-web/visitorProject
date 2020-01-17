@@ -1,9 +1,12 @@
+
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import java.io.*;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Scanner;
 
     public class Visitor  {
+        private static final Logger logger = LogManager.getLogger(Visitor.class.getName());
       static String Name;
       static int n;
       String time;
@@ -31,6 +34,7 @@ import java.util.Scanner;
                     myFile.write("Name: " + Name + " Age: " + n  + " Date: " + date  + " Time: " + time + " Comments: " + feedback + " Aid: " + aid);
                     myFile.close();
                     outcome += "results in "+fileName;
+
                 }else{
                     outcome +=fileName+" File already exists!";
                 }
@@ -50,7 +54,7 @@ import java.util.Scanner;
              Scanner myReader = new Scanner(myObj);
              while(myReader.hasNextLine()){
                  String data = myReader.nextLine();
-                 output.append(data);
+                 logger.info(output.append(data));
              }
              myReader.close();
          } catch (FileNotFoundException e) {
