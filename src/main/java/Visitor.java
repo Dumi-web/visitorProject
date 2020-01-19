@@ -1,7 +1,5 @@
-
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
-
 import java.io.*;
 import java.util.Scanner;
 
@@ -25,6 +23,7 @@ import java.util.Scanner;
         aid = assistanceName;
         fileName = "visitor_"+Name.split(" ")[0]+"_"+Name.split(" ")[1]+".txt";
     }
+
     public String save() {
          String outcome = "";
         try {
@@ -36,9 +35,8 @@ import java.util.Scanner;
                     outcome += "results in "+fileName;
 
                 }else{
-                    outcome +=fileName+" File already exists!";
+                    outcome += fileName+" File already exists!";
                 }
-
 
         } catch (IOException e) {
             outcome +="An error has occurred";
@@ -46,9 +44,10 @@ import java.util.Scanner;
         }
             return outcome;
     }
+
     public String load(String visitorName){
          StringBuilder output = new StringBuilder();
-         String fileName = "visitor_"+visitorName.split(" ")[0]+"_"+visitorName.split(" ")[1]+".txt";
+         String fileName = "visitor_"+visitorName.split(" ")[0].toLowerCase()+"_"+visitorName.split(" ")[1].toLowerCase()+".txt";
          try{
              File myObj = new File(fileName);
              Scanner myReader = new Scanner(myObj);
@@ -63,5 +62,4 @@ import java.util.Scanner;
          }
          return output.toString();
     }
-
 }

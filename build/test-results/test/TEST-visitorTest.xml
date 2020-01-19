@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="visitorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-17T11:56:01" hostname="Area51s-MacBook-Pro.local" time="0.121">
+<testsuite name="visitorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-18T18:14:42" hostname="Area51s-MacBook-Pro.local" time="0.034">
   <properties/>
-  <testcase name="load()" classname="visitorTest" time="0.121"/>
-  <system-out><![CDATA[[INFO ] 2020-01-17 13:56:01.335 [Test worker] Visitor - Name: alice cooper Age: 30 Date: 08 September 2012 Time: 14:45 Comments: I really enjoyed this place  Aid: Clive
+  <testcase name="load()" classname="visitorTest" time="0.034"/>
+  <system-out><![CDATA[[INFO ] 2020-01-18 20:14:42.476 [Test worker] Visitor - Name: alice cooper Age: 30 Date: 08 September 2012 Time: 14:45 Comments: I really enjoyed this place  Aid: Clive
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
