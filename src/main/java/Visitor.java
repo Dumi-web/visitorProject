@@ -57,7 +57,7 @@ import java.util.Scanner;
              }
              myReader.close();
          } catch (FileNotFoundException e) {
-             output = new StringBuilder("An error has occurred");
+             output = new StringBuilder("Error!, file: "+fileName+" not found!");
              e.printStackTrace();
          }
          return output.toString();
